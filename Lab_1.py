@@ -1,13 +1,8 @@
 from math import *
 
-
-try:
-    a = float(input('Введіть сторону a:'))
-    b = float(input('Введіть сторону b:'))
-    c = float(input('Введіть сторону c:'))
-except:
-    print('Invalid input')
-
+a = float(input('Введіть сторону a:'))
+b = float(input('Введіть сторону b:'))
+c = float(input('Введіть сторону c:'))
 if a + b > c and b + c > a and a + c > b and a > 0 and b > 0 and c > 0:
     p = (a + b + c)/2
     S = sqrt(p*(p-a)*(p-b)*(p-c))
@@ -24,4 +19,3 @@ if a + b > c and b + c > a and a + c > b and a > 0 and b > 0 and c > 0:
     print('Радіус описаного кола:', round(R, 2))
 else:
     print('Заданого трикутника не існує')
-    
