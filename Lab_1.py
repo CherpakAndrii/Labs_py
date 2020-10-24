@@ -1,8 +1,14 @@
-from math import *
+import math, re
+a, b, c = 'a', 'b', 'c'
 
-a = float(input('Введіть сторону a:'))
-b = float(input('Введіть сторону b:'))
-c = float(input('Введіть сторону c:'))
+for n in a, b, c:
+    n = input('Введіть сторону {}'.format(n))
+    if re.match(r"^[0-9]+\.?[0-9]*$", n):
+        n = float(n)
+    else:
+        print('Введено некоректне значення!')
+        quit()
+
 if a + b > c and b + c > a and a + c > b and a > 0 and b > 0 and c > 0:
     p = (a + b + c)/2
     S = sqrt(p*(p-a)*(p-b)*(p-c))
