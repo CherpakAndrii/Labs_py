@@ -1,19 +1,20 @@
-import os, re
-a, b, c, numList = 'a', 'b', 'c', []
+import re
+a, b, c, d = 'a', 'b', 'c', 'd'
 
-
-for n in a, b, c:
+def check(n):
     n = input('{} = '.format(n))
-    if re.match(r"^-?[0-9]+\.?[0-9]*$", n):
+    if re.match(r"^[0-9]+\.?[0-9]*$", n):
         n = float(n)
-        if n not in numList:
-            numList.append(n)
-        else:
-            print('\nСеред чисел є рівні')
-            os.system('pause')
-            quit()
     else:
-        print('Введено нечислове значення!')
+        print('Invalid input')
         quit()
-print('\nСеред заданих чисел немає однакових')
-os.system('pause')
+
+check(a)
+check(b)
+check(c)
+check(d)
+if a<=c and b<=d or a<=d and b<=c:
+    s = ''
+else:
+    s = 'не '
+print('Прямокутник зі сторонами a, b {}можна розмістити всередині прямкутника зі сторонами c, d.'.format(s))
