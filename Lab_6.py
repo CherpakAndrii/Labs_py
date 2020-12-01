@@ -1,5 +1,4 @@
 import math
-# import numpy as np
 eps = 0.00001
 x1 = 0.818
 x2 = 1.403
@@ -11,8 +10,6 @@ c = '2/x*math.cos(x/2)'
 
 def get_area(x_min, x_max, f1, f2):
     s = 0
-    # for x in np.arrange(x_min, x_max, eps):
-    #     s += (eval(f1)-eval(f2))*eps
     x = x_min
     while x<=x_max:
         s += (eval(f1) - eval(f2)) * eps
